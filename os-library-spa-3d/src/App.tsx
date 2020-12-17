@@ -10,7 +10,9 @@ import { BaseScene } from './shared/components/layout/BaseScene/BaseScene';
 function App() {
   return (
     <BaseScene>
-      <Libraries />
+      <Route path={["/library/:uid", "/"]}>
+        <Libraries />
+      </Route>
     </BaseScene>
   );
 }
