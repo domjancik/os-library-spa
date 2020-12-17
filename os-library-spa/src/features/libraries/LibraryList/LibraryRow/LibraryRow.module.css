@@ -1,0 +1,6 @@
+.LibraryRow .Column0 {
+    max-width: 10rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

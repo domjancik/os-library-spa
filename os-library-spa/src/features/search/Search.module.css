@@ -1,0 +1,13 @@
+.Search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Search div {
+    margin: 0.5rem;
+}
+
+.Search input {
+    padding: 0.5rem;
+}

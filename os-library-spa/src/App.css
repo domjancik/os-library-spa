@@ -1,0 +1,9 @@
+:root {
+  --app-primary: rgba(50, 130, 255, 1);
+}
+
+body {
+  background: #222;
+  color: white;
+  text-align: center;
+}

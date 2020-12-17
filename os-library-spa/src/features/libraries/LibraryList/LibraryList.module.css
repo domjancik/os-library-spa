@@ -1,0 +1,10 @@
+.LibraryList {
+    margin: auto;
+}
+
+.LibraryList td {
+    padding: 0.4rem;
+    border-radius: 0.1rem;
+    box-shadow: 0px 0px 2px var(--app-primary);
+    text-align: left;
+}
