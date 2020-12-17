@@ -50,10 +50,20 @@ cd os_library_api
 pipenv install
 cd ..
 
+echo 'Installing SPA...'
+echo ""
+
 cd os-library-spa
 npm install
 cd ..
 
+echo 'Installing SPA 3D...'
+echo ""
+
+cd os-library-spa-3d
+npm install
+cd ..
+
 # TODO randomized messages
-echo -e "${success}Ready to go -> ./start.sh${reset}"
+echo -e "${success}Ready to go -> ./start_*.sh${reset}"
 echo ""
