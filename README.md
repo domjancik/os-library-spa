@@ -1,6 +1,16 @@
 # OS Libraries SPA
 
-## Running the API server
+# Installing and running
+
+## Scripts
+
+        ./install.sh
+        ./start_api.sh
+        ./start_spa.sh
+
+## Manual steps
+
+### API server
 1. Make sure you have python3 available
 2. Go to the API folder
 
@@ -17,7 +27,7 @@
 
 5. The API is available at http://localhost:8000
 
-## Running the SPA
+### Running the SPA
 1. Make sure you have node, npm available
 2. Go to the SPA folder
 
