@@ -2,19 +2,18 @@ import { any } from 'lodash/fp'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
-import { fetchLibrary, reset, selectLibrary, update, updateLibrary } from '../librarySlice'
+import { fetchLibrary, reset, selectLibrary, update, updateLibrary, insertLibrary } from '../librarySlice'
 
-interface Props {
-}
-
-export const LibraryEdit = ({ }: Props) => {
+export const LibraryEdit = () => {
     const library = useSelector(selectLibrary)
     const dispatch = useDispatch()
     const history = useHistory()
     const { uid } = useParams<{uid: string}>()
 
+    const isNew = uid == 'new'
+
     useEffect(() => {
-        if (uid == 'new') {
+        if (isNew) {
             dispatch(reset);
         } else {
             dispatch(fetchLibrary(uid))
@@ -28,7 +27,10 @@ export const LibraryEdit = ({ }: Props) => {
     const goToIndex = () => history.push('/')
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        dispatch(updateLibrary(library, goToIndex))
+        
+        const dispatchFunction = isNew ? insertLibrary : updateLibrary;
+
+        dispatch(dispatchFunction(library, goToIndex))
     }
     const handleCancel = goToIndex
 

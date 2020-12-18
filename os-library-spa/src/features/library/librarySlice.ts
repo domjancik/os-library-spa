@@ -82,6 +82,15 @@ export const updateLibrary = (library: ILibrary, success: ((dispatch: any) => an
         .catch(reason => dispatch(failure(reason.toString())))
 }
 
+export const insertLibrary = (library: ILibrary, success: ((dispatch: any) => any)): AppThunk => dispatch => {
+    dispatch(start());
+
+    axios
+        .post(`/library`, library)
+        .then(_ => success(dispatch))
+        .catch(reason => dispatch(failure(reason.toString())))
+}
+
 export const selectLibrary = (state: RootState) => state.library.library;
 
 export default librarySlice.reducer;
