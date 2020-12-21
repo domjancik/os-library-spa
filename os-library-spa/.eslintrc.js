@@ -33,9 +33,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    rules: {
-      'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
-    },
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['state'] }],
   },
   settings: {
     'import/resolver': {

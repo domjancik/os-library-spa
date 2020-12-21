@@ -19,7 +19,8 @@ function Libraries(): ReactElement {
 
   const handleNew = () => history.push('/library/new');
 
-  const filteredLibraries = libraries.filter(({ name, author }) => name.toLocaleLowerCase().includes(filter)
+  const filteredLibraries = libraries
+    .filter(({ name, author }) => name.toLocaleLowerCase().includes(filter)
         || author.toLocaleLowerCase().includes(filter));
 
   return (
@@ -32,6 +33,6 @@ function Libraries(): ReactElement {
       </div>
     </>
   );
-};
+}
 
 export default Libraries;

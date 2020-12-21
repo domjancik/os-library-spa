@@ -66,29 +66,38 @@ export const fetchLibrary = (uid: string): AppThunk => (dispatch) => {
   axios
     .get<ILibrary>(`/library/${uid}`)
     .then((response) => {
-      console.log(response);
       dispatch(success(response.data));
     })
     .catch((reason) => dispatch(failure(reason.toString())));
 };
 
-export const updateLibrary = (library: ILibrary, success: ((dispatch: any) => any)): AppThunk => (dispatch) => {
+/* eslint-disable no-unused-vars */
+export const updateLibrary = (
+  library: ILibrary,
+  successCb: ((dispatch: any) => any),
+): AppThunk => (dispatch) => {
   dispatch(start());
 
   axios
     .put(`/library/${library.uid}`, library)
-    .then((_) => success(dispatch))
+    .then(() => successCb(dispatch))
     .catch((reason) => dispatch(failure(reason.toString())));
 };
+/* eslint-enable no-unused-vars */
 
-export const insertLibrary = (library: ILibrary, success: ((dispatch: any) => any)): AppThunk => (dispatch) => {
+/* eslint-disable no-unused-vars */
+export const insertLibrary = (
+  library: ILibrary,
+  successCb: ((dispatch: any) => any),
+): AppThunk => (dispatch) => {
   dispatch(start());
 
   axios
     .post('/library', library)
-    .then((_) => success(dispatch))
+    .then(() => successCb(dispatch))
     .catch((reason) => dispatch(failure(reason.toString())));
 };
+/* eslint-enable no-unused-vars */
 
 export const selectLibrary = (state: RootState) => state.library.library;
 
