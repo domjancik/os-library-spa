@@ -1,0 +1,35 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Header ul {
+    list-style: none;
+}
+
+.Header li {
+    display: inline-block;
+    transition: all 100ms;
+}
+
+.Header li a {
+    color: #222;
+    margin: 1rem;
+
+    font-weight: bold;
+
+    text-decoration: none;
+ 
+    transition: all 100ms;
+}
+
+.Header li a.Active {
+    color: var(--app-primary);
+    text-decoration: underline;
+}
+
+.Header li:hover {
+    transform: translateY(-2px);
+}

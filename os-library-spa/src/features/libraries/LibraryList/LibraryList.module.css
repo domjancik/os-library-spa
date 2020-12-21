@@ -1,10 +1,26 @@
 .LibraryList {
     margin: auto;
+    width: 80vw;
+    border-spacing: 0;
 }
 
-.LibraryList td {
-    padding: 0.4rem;
-    border-radius: 0.1rem;
-    box-shadow: 0px 0px 2px var(--app-primary);
-    text-align: left;
+@media only screen and (max-width: 1000px) {
+    .LibraryList {
+      width: 100%;
+    }
+}
+
+.LibraryList th {
+    background: white;
+    position: sticky;
+    top: 4rem;
+    padding: 1rem 0;
+}
+
+.LibraryListEmpty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 4rem);
+    font-size: 2rem;
 }

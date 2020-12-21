@@ -1,4 +1,7 @@
 .Frame header {
     position: fixed;
     top: 0.5rem;
+    width: 100%;
+    box-shadow: 0 0 5px 5px black;
+    background: red;
 }

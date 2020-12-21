@@ -1,8 +1,9 @@
+import { Clear, Search as SearchIcon } from '@material-ui/icons';
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { set, selectFilter } from './searchSlice';
-
+import FlatButton from '../../components/FlatButton/FlatButton';
 import classes from './Search.module.css';
+import { selectFilter, set } from './searchSlice';
 
 function Search() {
   const dispatch = useDispatch();
@@ -18,18 +19,20 @@ function Search() {
 
   return (
     <div className={classes.Search}>
-      <div>🔍</div>
+      <div>
+        {!value ? <SearchIcon color="primary" /> : (
+          <FlatButton type="button" onClick={handleClear}>
+            <Clear color="primary" />
+          </FlatButton>
+        )}
+
+      </div>
       <input
         placeholder="Filter"
         type="text"
         onChange={handleChange}
         value={value}
       />
-      {value ? (
-        <button type="button" onClick={handleClear}>
-          ❌
-        </button>
-      ) : null}
     </div>
   );
 }

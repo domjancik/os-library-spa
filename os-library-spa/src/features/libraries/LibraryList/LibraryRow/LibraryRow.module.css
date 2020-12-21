@@ -3,4 +3,48 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+
+    width: 20%;
+}
+
+.LibraryRow .Column1 {
+    font-weight: bold;
+
+    width: 20%;
+}
+
+.LibraryRow .Column2 {
+    width: 5%;
+}
+
+.LibraryRow .Column3 {
+    width: 5%;
+}
+
+.LibraryRow .PopColumn {
+    width: 5%;
+}
+.LibraryRow .DeleteColumn {
+    width: 1%;
+}
+.LibraryRow .EditColumn {
+    width: 1%;
+}
+.LibraryRow .DetailColumn {
+    width: 1%;
+}
+
+.LibraryRow td {
+    padding: 0.4rem;
+    border-radius: 0.1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--app-primary);
+}
+
+.LibraryRow {
+    transition: all 100ms;
+}
+
+.LibraryRow:hover {
+    background: rgba(0,0,0,0.03);
 }

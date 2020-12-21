@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import Button from '../../../components/Button/Button';
 import {
   fetchLibrary, reset, selectLibrary, update, updateLibrary, insertLibrary,
 } from '../librarySlice';
+
+import classes from './LibraryEdit.module.css';
 
 function LibraryEdit() {
   const library = useSelector(selectLibrary);
@@ -15,7 +18,7 @@ function LibraryEdit() {
 
   useEffect(() => {
     if (isNew) {
-      dispatch(reset);
+      dispatch(reset());
     } else {
       dispatch(fetchLibrary(uid));
     }
@@ -35,24 +38,28 @@ function LibraryEdit() {
   };
   const handleCancel = goToIndex;
 
+  const title = isNew ? 'Add library' : 'Edit library';
+
+  /* eslint-disable jsx-a11y/label-has-associated-control */
   return (
-    <div>
+    <div className={classes.LibraryEdit}>
+      <div className={classes.LibraryEditTitle}>{title}</div>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="author">
             Author
-            <input type="text" name="author" id="author" value={library.author} onChange={handleChange('author')} />
           </label>
+          <input type="text" name="author" id="author" value={library.author} onChange={handleChange('author')} />
         </div>
         <div>
           <label htmlFor="name">
             Name
-            <input type="text" name="name" id="name" value={library.name} onChange={handleChange('name')} />
           </label>
+          <input type="text" name="name" id="name" value={library.name} onChange={handleChange('name')} />
         </div>
-        <div>
-          <button type="submit">✔</button>
-          <button type="button" onClick={handleCancel}>❌</button>
+        <div className={classes.LibraryEditButtons}>
+          <Button type="submit">OK</Button>
+          <Button type="button" onClick={handleCancel}>Cancel</Button>
         </div>
       </form>
     </div>

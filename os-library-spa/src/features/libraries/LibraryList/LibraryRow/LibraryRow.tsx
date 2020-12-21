@@ -1,6 +1,9 @@
 import React, { ReactElement } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { Edit, DeleteForever, Link as LinkIcon } from '@material-ui/icons';
+
+import Button from '../../../../components/Button/Button';
 import { ILibrary } from '../../../library/librarySlice';
 import { deleteLibrary, selectMaxDownloads } from '../../librariesSlice';
 import DownloadBar from './DownloadBar/DownloadBar';
@@ -26,13 +29,15 @@ const LibraryRow = ({ library }: Props): ReactElement => {
   const handleEdit = () => history.push(`/library/${uid}`);
   const handleDetail = () => window.open(uri, '_blank');
 
+  const linkDisabled = !uri;
+
   return (
     <tr className={classes.LibraryRow}>
       {cellTextData.map((text, i) => <td className={classes[`Column${i}`]} key={text}>{text}</td>)}
-      <td><DownloadBar amount={downloads / maxDownloads} /></td>
-      <td><button type="button" onClick={handleDelete}>❌</button></td>
-      <td><button type="button" onClick={handleEdit}>✏</button></td>
-      <td><button type="button" disabled={!uri} onClick={handleDetail}>🌎</button></td>
+      <td className={classes.PopColumn}><DownloadBar amount={downloads / maxDownloads} /></td>
+      <td className={classes.DeleteColumn}><Button type="button" onClick={handleDelete}><DeleteForever color="primary" /></Button></td>
+      <td className={classes.EditColumn}><Button type="button" onClick={handleEdit}><Edit color="primary" /></Button></td>
+      <td className={classes.DetailColumn}><Button type="button" disabled={!uri} onClick={handleDetail}><LinkIcon color={linkDisabled ? 'disabled' : 'primary'} /></Button></td>
     </tr>
   );
 };

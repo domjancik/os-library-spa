@@ -1,9 +1,11 @@
 :root {
-  --app-primary: rgba(50, 130, 255, 1);
+  --app-primary: #3f51b5;
 }
 
 body {
-  background: #222;
-  color: white;
+  color: #222;
+  background: white;
   text-align: center;
+
+  font-family: 'Montserrat', sans-serif;
 }

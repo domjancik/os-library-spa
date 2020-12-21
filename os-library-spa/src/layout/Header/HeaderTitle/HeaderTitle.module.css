@@ -1,0 +1,8 @@
+.HeaderTitle {
+    font-size: 2rem;
+    font-weight: bold;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

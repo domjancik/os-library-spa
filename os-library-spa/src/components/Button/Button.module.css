@@ -1,0 +1,32 @@
+.Button {
+    background-color: white;
+    border: 2px var(--app-primary) solid;
+    color: var(--app-primary);
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    box-shadow: 0 0 0 rgba(194, 169, 169, 0.2);
+    transition: all 100ms;
+
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    margin: 0 0.5rem;
+}
+
+.ButtonEnabled {
+    cursor: pointer;
+}
+
+.ButtonEnabled:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.2);
+}
+
+.ButtonDisabled {
+    border-color: rgba(0, 0, 0, 0.26);
+}
