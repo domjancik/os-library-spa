@@ -4,11 +4,7 @@ import { selectFilter } from '../search/searchSlice';
 import { fetchLibraries, selectLibraries } from './librariesSlice'
 import { LibraryList } from './LibraryList/LibraryList';
 
-interface Props {
-
-}
-
-export function Libraries({ }: Props): ReactElement {
+export function Libraries(): ReactElement {
     const libraries = useSelector(selectLibraries);
     const dispatch = useDispatch();
     const filter = useSelector(selectFilter).toLocaleLowerCase();
